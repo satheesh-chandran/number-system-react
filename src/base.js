@@ -21,7 +21,7 @@ class Base extends React.Component {
         <label>Base {this.props.base} : </label>
         <input
           type='text'
-          value={this.state.value}
+          value={this.props.value}
           onChange={this.onChange}
         ></input>
       </div>

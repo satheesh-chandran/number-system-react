@@ -1,20 +1,10 @@
 import React from 'react';
 import './App.css';
 import Base from './base';
+import expressions from './expressions';
 
-const expressions = [
-  /^[0-1\b]*$/,
-  /^[0-2\b]*$/,
-  /^[0-3\b]*$/,
-  /^[0-4\b]*$/,
-  /^[0-5\b]*$/,
-  /^[0-6\b]*$/,
-  /^[0-7\b]*$/,
-  /^[0-8\b]*$/,
-  /^[0-9\b]*$/
-];
 
-class Master extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { number: 0 };
@@ -23,7 +13,6 @@ class Master extends React.Component {
 
   async onChange(number) {
     await this.setState({ number });
-    console.log(number, this.state.number);
   }
 
   render() {
@@ -45,4 +34,4 @@ class Master extends React.Component {
   }
 }
 
-export default Master;
+export default App;
