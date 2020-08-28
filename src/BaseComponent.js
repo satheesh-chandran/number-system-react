@@ -1,30 +1,17 @@
 import React from 'react';
 
-class Base extends React.Component {
-  constructor(props) {
-    super(props);
-    this.onChange = this.onChange.bind(this);
-  }
-
-  onChange(event) {
+const BaseComponents = function (props) {
+  const onChange = function (event) {
     const value = event.target.value;
-    if (this.props.expression.test(value)) {
-      this.props.onChange(parseInt(value, this.props.base));
-    }
-  }
+    if (props.expression.test(value))
+      props.onChange(parseInt(value, props.base));
+  };
+  return (
+    <div>
+      <label>Base {props.base} : </label>
+      <input type='text' value={props.value} onChange={onChange}></input>
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div>
-        <label>Base {this.props.base} : </label>
-        <input
-          type='text'
-          value={this.props.value}
-          onChange={this.onChange}
-        ></input>
-      </div>
-    );
-  }
-}
-
-export default Base;
+export default BaseComponents;
