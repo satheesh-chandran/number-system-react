@@ -3,15 +3,13 @@ import React from 'react';
 class Base extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: this.props.value };
     this.onChange = this.onChange.bind(this);
   }
 
-  async onChange(event) {
+  onChange(event) {
     const value = event.target.value;
     if (this.props.expression.test(value)) {
-      await this.setState({ value });
-      this.props.onChange(parseInt(this.state.value, this.props.base));
+      this.props.onChange(parseInt(value, this.props.base));
     }
   }
 

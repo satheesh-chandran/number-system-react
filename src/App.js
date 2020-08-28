@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import Base from './base';
+import Base from './BaseComponent';
 import expressions from './expressions';
-
 
 class App extends React.Component {
   constructor(props) {
@@ -11,8 +10,8 @@ class App extends React.Component {
     this.onChange = this.onChange.bind(this);
   }
 
-  async onChange(number) {
-    await this.setState({ number });
+  onChange(number) {
+    this.setState({ number });
   }
 
   render() {
